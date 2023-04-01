@@ -8,8 +8,8 @@
 import Foundation
 
 public struct EmbedModel: Codable {
-    let model: String
-    let input: [String]
+    public let model: String
+    public let input: [String]
     
     public init(model: String, input: [String]) {
         self.model = model
@@ -19,10 +19,10 @@ public struct EmbedModel: Codable {
 
 
 public struct EmbedResponse: Codable {
-    let object: String
-    let model: String
-    let data: [Embedding]
-    let usage: Usage
+    public let object: String
+    public let model: String
+    public let data: [Embedding]
+    public let usage: Usage
 
     public init(object: String, model: String, data: [Embedding], usage: Usage) {
         self.object = object
@@ -33,9 +33,9 @@ public struct EmbedResponse: Codable {
 }
 
 public struct Embedding: Codable {
-    let object: String
-    let embedding: [Double]
-    let index: Int
+    public let object: String
+    public let embedding: [Double]
+    public let index: Int
     
     public init(object: String, embedding: [Double], index: Int) {
         self.object = object
@@ -45,8 +45,8 @@ public struct Embedding: Codable {
 }
 
 public struct Usage: Codable {
-    let prompt_tokens: Int
-    let total_tokens: Int
+    public let prompt_tokens: Int
+    public let total_tokens: Int
     
     public init(prompt_tokens: Int, total_tokens: Int) {
         self.prompt_tokens = prompt_tokens
@@ -55,10 +55,10 @@ public struct Usage: Codable {
 }
 
 public struct EmbedResult: Codable {
-    let id: String? = UUID().uuidString
-    let index: Int
-    let embedding: [Double]
-    let text: String
+    public let id: String? = UUID().uuidString
+    public let index: Int
+    public let embedding: [Double]
+    public let text: String
     
     public init(index: Int, embedding: [Double], text: String) {
         self.index = index
