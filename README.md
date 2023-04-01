@@ -1,7 +1,5 @@
 # PineconeSwift
 
-# PineconeSwift
-
 PineconeSwift is an open-source Swift Package designed to seamlessly integrate Pinecone, a powerful vector database, into your Swift applications. With PineconeSwift, you can easily leverage Pinecone's capabilities to efficiently store and query high-dimensional vectors, enabling you to build state-of-the-art machine learning and recommendation systems.
 
 ## Features
