@@ -11,3 +11,31 @@ PineconeSwift is an open-source Swift Package designed to seamlessly integrate P
 - Thoroughly **tested and documented**, ensuring a smooth development experience
 
 PineconeSwift is your go-to solution for integrating Pinecone's cutting-edge vector database technology into your Swift projects, enabling you to build advanced, scalable, and robust applications with ease.
+
+## Usage 
+
+For example for upsert:
+
+Create an array of EmbedResult structs: 
+
+```
+public struct EmbedResult: Codable {
+    public let id: String? = UUID().uuidString
+    public let index: Int
+    public let embedding: [Double]
+    public let text: String
+    
+    public init(index: Int, embedding: [Double], text: String) {
+        self.index = index
+        self.embedding = embedding
+        self.text = text
+    }
+}
+```
+Then simply create PineconeSwift object and call for upsert method:
+
+```            
+let pai = PineconeSwift(apikey: {your_Pinecone_API_key}}, baseURL: {your Pinecone_base_url_to_index}})
+
+let result = try await pai.upsertVectors(with: embeddings, namespace: {string}})
+```
