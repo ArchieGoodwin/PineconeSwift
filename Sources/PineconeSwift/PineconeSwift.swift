@@ -80,7 +80,6 @@ extension PineconeSwift {
     
     public func updateVectors(with vector: EmbedResult, metadata: [String: String], namespace: String, id: String, endpoint: PineconeEndpoint = .update) async throws -> Bool {
       
-        
         let body = PineconeUpdateRequest(setMetadata: metadata, namespace: namespace, id: id, values: vector.embedding)
         let request = prepareRequest(endpoint, body: body)
         
