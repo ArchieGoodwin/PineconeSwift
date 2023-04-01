@@ -38,10 +38,10 @@ public struct PineconeQueryRequest: Codable {
 
 
 public struct PineconeVector: Codable {
-    let id: String
-    let values: [Double]
-    let metadata: [String: String]
-    let score: Double?
+    public let id: String
+    public let values: [Double]
+    public let metadata: [String: String]
+    public let score: Double?
     
     public init(id: String, values: [Double], metadata: [String : String], score: Double?) {
         self.id = id
@@ -52,8 +52,8 @@ public struct PineconeVector: Codable {
 }
 
 public struct PineconeQueryResponse: Codable {
-    let matches: [PineconeVector]
-    let namespace: String
+    public let matches: [PineconeVector]
+    public let namespace: String
     
     public init(matches: [PineconeVector], namespace: String) {
         self.matches = matches
@@ -62,7 +62,7 @@ public struct PineconeQueryResponse: Codable {
 }
 
 public struct PineconeUpsertResponse: Codable {
-    let upsertedCount: Int
+    public let upsertedCount: Int
     
     public init(upsertedCount: Int) {
         self.upsertedCount = upsertedCount
@@ -94,8 +94,8 @@ public struct PineconeFetchRequest: Codable {
 }
 
 public struct PineconeFetchResponse: Codable {
-    let vectors: FetchVectors
-    let namespace: String
+    public let vectors: FetchVectors
+    public let namespace: String
     
     public init(vectors: FetchVectors, namespace: String) {
         self.vectors = vectors
@@ -104,7 +104,7 @@ public struct PineconeFetchResponse: Codable {
 }
 
 public struct FetchVectors: Codable {
-    let additionalProp: [PineconeVector]
+    public let additionalProp: [PineconeVector]
     
     public init(additionalProp: [PineconeVector]) {
         self.additionalProp = additionalProp
